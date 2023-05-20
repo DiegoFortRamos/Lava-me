@@ -14,7 +14,7 @@ export default function Item({nome,preco,descricao}){
         <Text style={estilos.descricao}>{descricao}</Text>
 
      <View style={estilos.carrinho}>
-        <Botao  valor="Adicionar ao Carrinho" acao={() =>{} } />
+        <Botao  valor="Remover do Carrinho" acao={() =>{} } />
         <Text style={estilos.preco}>{Intl.NumberFormat('pt-BR',{style: 'currency',currency :'BRL'}).format(preco)}
         </Text>
     </View>

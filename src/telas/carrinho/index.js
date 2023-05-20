@@ -3,6 +3,7 @@ import {Text,SafeAreaView,StatusBar,FlatList} from "react-native";
 import Item from "./item";
 import estilos from "../../estilos";
 import estilosGlobais from  '../../estilos'
+import StatusCarrinho from "../../componentes/statusCarrinho";
 
 const servicos = [
     {
@@ -33,9 +34,13 @@ const servicos = [
 
 ]
 
-export default function Servicos(){
+export default function Carrinho(){
+    const total = servicos.reduce((soma,{preco}) => soma + preco,0)
+
+
     return <SafeAreaView style={estilos.preencher}>
          <StatusBar/>
+         <StatusCarrinho total={total} />
          <FlatList
             data={servicos}
             renderItem={({item}) => <Item {...item}/>}
